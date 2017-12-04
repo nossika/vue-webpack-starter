@@ -14,6 +14,13 @@ baseConfig.output.path = outputPath;
 module.exports = Object.assign(baseConfig, {
     devtool: '#source-map',
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: ({resource}) => /node_modules/.test(resource)
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest',
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
@@ -34,7 +41,7 @@ module.exports = Object.assign(baseConfig, {
             inject: 'body'
         }),
         new CleanWebpackPlugin(
-            [outputPath + '/js/*.js', outputPath + '/js/*.map'],
+            [outputPath + '/*'],
             {
                 root: path.resolve(__dirname, '../'),
                 verbose:  true,
