@@ -18,6 +18,10 @@ module.exports = new Router({
             }
         },
         {
+            path: '/',
+            redirect: '/home'
+        },
+        {
             path: '*',
             redirect: '/error'
         }
