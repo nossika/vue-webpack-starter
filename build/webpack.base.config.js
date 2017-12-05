@@ -36,7 +36,7 @@ const config = {
                 test: /\.(png|jpe?g|gif|svg|ttf|woff|woff2|eot)(\?\S*)?$/,
                 loader: 'file-loader',
                 query: {
-                    name: '[name].[ext]?[hash]'
+                    name: '[name].[hash].[ext]'
                 }
             }
         ]

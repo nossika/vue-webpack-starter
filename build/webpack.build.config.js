@@ -44,7 +44,7 @@ module.exports = Object.assign(baseConfig, {
                 test: /\.(png|jpe?g|gif|svg|ttf|woff|woff2|eot)(\?\S*)?$/,
                 loader: 'file-loader',
                 query: {
-                    name: '[name].[hash].[ext]?'
+                    name: '[name].[hash].[ext]'
                 }
             }
         ]
