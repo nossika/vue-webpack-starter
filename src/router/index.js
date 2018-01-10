@@ -1,20 +1,20 @@
-const Vue = require('vue').default;
-const Router = require('vue-router').default;
+import Vue from 'vue';
+import Router from 'vue-router';
 
 Vue.use(Router);
 
-module.exports = new Router({
+export default new Router({
     routes: [
         {
             path: '/home',
             components: {
-                body: resolve => require(['containers/home/index.vue'], resolve),
+                body: resolve => { import('containers/home/index.vue').then(data => resolve(data)) },
             }
         },
         {
             path: '/error',
             components: {
-                body: resolve => require(['containers/404.vue'], resolve),
+                body: resolve => { import('containers/404.vue').then(data => resolve(data)) },
             }
         },
         {
@@ -24,6 +24,6 @@ module.exports = new Router({
         {
             path: '*',
             redirect: '/error'
-        }
+        },
     ]
 });
