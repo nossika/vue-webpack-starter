@@ -11,6 +11,10 @@ const config = {
     module: {
         rules: [
             {
+                test: /\.tsx?$/,
+                loader: 'ts-loader'
+            },
+            {
                 test: /\.jsx?$/,
                 use: [
                     {
@@ -49,6 +53,7 @@ const config = {
             'style': path.resolve(__dirname, '../src/style'),
             'resources': path.resolve(__dirname, '../src/resources'),
         },
+        extensions: ["*", ".ts", ".tsx", ".js", "jsx", ".json"],
     },
 };
 

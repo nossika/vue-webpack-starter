@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import Vue from 'vue';
 import store from './store';
-const router = require('./router');
+import router from './router';
 import App from './App.vue';
 import 'style/global.less';
 
