@@ -5,7 +5,7 @@
         </section>
     </section>
 </template>
-<script>
+<script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
 import api from 'utils/api';
 export default {

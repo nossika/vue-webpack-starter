@@ -56,7 +56,7 @@ const request = (config) => {
 };
 
 const api = {
-    getPage (config = {}) {
+    getPage (config: any = {}) {
         let { tip = '' } = config.params || {};
         return request({
             url: `/`,

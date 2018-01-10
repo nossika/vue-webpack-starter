@@ -1,24 +1,18 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
     "target": "es5",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
     "experimentalDecorators": true,
-    //    "moduleResolution": "node",
-    //    "rootDir": "src",
-    //    "noImplicitReturns": true,
-    //    "noImplicitThis": true,
-    //    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true
   },
-  "files": [
-    "./src/main.ts"
+  "include": [
+    "./src"
   ],
   "exclude": [
     "./node_modules"

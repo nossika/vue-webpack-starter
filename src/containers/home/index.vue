@@ -4,7 +4,7 @@
         <div>hey {{ greeter }} !</div>
     </section>
 </template>
-<script>
+<script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
 import vTitle from 'components/title.vue';
 export default {

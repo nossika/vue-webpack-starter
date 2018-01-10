@@ -12,7 +12,10 @@ const config = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader'
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
             },
             {
                 test: /\.jsx?$/,
@@ -53,7 +56,7 @@ const config = {
             'style': path.resolve(__dirname, '../src/style'),
             'resources': path.resolve(__dirname, '../src/resources'),
         },
-        extensions: ["*", ".ts", ".tsx", ".js", "jsx", ".json"],
+        extensions: ['*', '.ts', '.tsx', '.js', 'jsx', '.json'],
     },
 };
 

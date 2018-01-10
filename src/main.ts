@@ -6,7 +6,7 @@ import router from './router';
 import App from './App.vue';
 import 'style/global.less';
 
-window.VM = new Vue({
+new Vue({
     el: '#app',
     render: h => h(App),
     store,
