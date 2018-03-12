@@ -1,11 +1,13 @@
 <template>
     <section>
-        title
+        this is a {{title}} ~!
     </section>
 </template>
 <script lang="ts">
 export default {
-
+    props: {
+        title: String,
+    },
 }
 </script>
 <style scoped>

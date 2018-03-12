@@ -1,7 +1,11 @@
 <template>
     <section>
-        <v-title></v-title>
-        <div>hey {{ greeter }} !</div>
+        <v-title title="title"></v-title>
+        <a href="/#/room1">enter room</a>
+        <div>
+            <button @click="updateGreeter">dispatch an action!</button>
+            <div>state: {{ greeter }} </div>
+        </div>
     </section>
 </template>
 <script lang="ts">
@@ -11,12 +15,15 @@ export default {
     components: { vTitle },
     methods: {
         ...mapActions(['setGreeter']),
+        updateGreeter () {
+            this.setGreeter(this.greeter + '+');
+        },
     },
     computed: {
         ...mapGetters(['greeter']),
     },
     created () {
-        this.setGreeter('you');
+        this.setGreeter('');
     },
 }
 </script>

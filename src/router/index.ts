@@ -7,13 +7,19 @@ const routes: any = [
     {
         path: '/home',
         components: {
-            body: resolve => { import('containers/home/index.vue').then(data => resolve(data)) },
+            body: () => import('containers/home/index.vue'),
+        }
+    },
+    {
+        path: '/:room',
+        components: {
+            body: () => import('containers/room/index.vue'),
         }
     },
     {
         path: '/error',
         components: {
-            body: resolve => { import('containers/404.vue').then(data => resolve(data)) },
+            body: () => import('containers/404.vue'),
         }
     },
     {
