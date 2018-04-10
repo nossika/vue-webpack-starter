@@ -19,17 +19,12 @@ const config = {
             },
             {
                 test: /\.jsx?$/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        query: {
-                            "presets": ["es2015", "stage-0"],
-                            "plugins": ["transform-runtime", "transform-decorators-legacy"]
-                        },
-                    },
-                ],
+                loader: 'babel-loader',
                 exclude: /node_modules/,
-
+                query: {
+                    "presets": ["env", "stage-0"],
+                    "plugins": ["transform-runtime", "transform-decorators-legacy"]
+                }
             },
             {
                 test: /\.(css|less)$/,
