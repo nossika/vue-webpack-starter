@@ -1,7 +1,7 @@
 <template>
     <section>
         <v-title title="title"></v-title>
-        <a href="/#/room1">enter room</a>
+        <a href="javascript:void(0);" @click="enterRoom">enter room</a>
         <div>
             <button @click="updateGreeter">dispatch an action!</button>
             <div>state: {{ greeter }} </div>
@@ -17,6 +17,9 @@ export default {
         ...mapActions(['setGreeter']),
         updateGreeter () {
             this.setGreeter(this.greeter + '+');
+        },
+        enterRoom () {
+            this.$router.push('/room1');
         },
     },
     computed: {

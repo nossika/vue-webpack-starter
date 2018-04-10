@@ -6,7 +6,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: 'js/[name].[hash].js',
-        chunkFilename: 'js/chunk.[name].[hash].js'
+        chunkFilename: 'js/chunk.[name].[chunkhash].js'
     },
     module: {
         rules: [

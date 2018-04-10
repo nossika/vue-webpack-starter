@@ -3,7 +3,7 @@ import { env } from '../config';
 import { getFormdata } from './index';
 
 export const http = axios.create({
-        'develop': {
+        'development': {
             'withCredentials': true,
             'headers': {
                 'Content-Type': 'multipart/form-data',

@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 let outputPath = path.resolve(
     __dirname,
@@ -13,8 +13,16 @@ let outputPath = path.resolve(
 baseConfig.output.path = outputPath;
 
 module.exports = Object.assign(baseConfig, {
+    mode: 'production',
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
+            },
             {
                 test: /\.jsx?$/,
                 use: [
@@ -31,10 +39,11 @@ module.exports = Object.assign(baseConfig, {
             },
             {
                 test: /\.(css|less)$/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader!less-loader",
-                })
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'less-loader',
+                ],
             },
             {
                 test: /\.vue$/,
@@ -49,44 +58,46 @@ module.exports = Object.assign(baseConfig, {
             }
         ]
     },
-    devtool: '#source-map',
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: ({resource}) => /node_modules/.test(resource)
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
+    optimization: {
+        runtimeChunk: {
             name: 'manifest',
-        }),
-        new ExtractTextPlugin({
-            filename: '[hash].css',
-            allChunks: false,
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
+        },
+        minimize: true,
+        splitChunks: {
+            chunks: 'async',
+            cacheGroups: {
+                commons: {
+                    name: "common",
+                    chunks: "all",
+                    minChunks: 3,
+                    enforce: true,
+                },
+                vendor: {
+                    test: /node_modules/,
+                    chunks: "all",
+                    name: "vendor",
+                    priority: 10,
+                    enforce: true,
+                }
             }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
+        },
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[hash].css"
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: path.resolve(__dirname, '../src/index.html'),
-            inject: 'body'
+            inject: 'body',
         }),
         new CleanWebpackPlugin(
             [outputPath + '/*'],
             {
                 root: path.resolve(__dirname, '../'),
-                verbose:  true,
-                dry:      false
+                verbose: true,
+                dry: false,
             }
         ),
     ]
