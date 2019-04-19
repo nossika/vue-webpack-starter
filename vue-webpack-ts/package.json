@@ -1,14 +1,13 @@
 {
-  "name": "vue-webpack-starter",
+  "name": "vue-webpack-ts",
   "version": "0.1.0",
   "description": "",
-  "main": "",
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.dev.config.js",
-    "build": "webpack --config build/webpack.build.config.js"
+    "dev": "webpack-dev-server --config scripts/webpack.dev.config.js",
+    "build": "webpack --config scripts/webpack.build.config.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "nossika",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "vue": "^2.5.16",
