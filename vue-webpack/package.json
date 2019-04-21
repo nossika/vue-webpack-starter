@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "dev": "webpack-dev-server --config scripts/webpack.dev.config.js",
-    "build": "webpack --config scripts/webpack.build.config.js"
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-stage-0": "^7.0.0",
     "@babel/runtime": "^7.4.3",
+    "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
@@ -31,9 +32,11 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.6.0",
+    "open-browser-webpack-plugin": "0.0.5",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.7.0",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-dev-server": "^3.3.1"
   }
 }
