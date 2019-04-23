@@ -6,6 +6,7 @@ const getConfig = require('./config/webpack.dev.config');
 let PORT = process.env.PORT || 8080;
 
 const config = getConfig({ PORT });
+config.mode = 'development';
 
 const compiler = webpack(config);
 
