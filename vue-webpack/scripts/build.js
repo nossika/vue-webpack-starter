@@ -6,7 +6,6 @@ const baseConfig = require('./webpack.base.config');
 const config = baseConfig();
 
 config.mode = 'production';
-config.devtool = 'eval-source-map';
 
 config.plugins.push(
   new webpack.ProgressPlugin((percentage, msg) => {
@@ -14,7 +13,6 @@ config.plugins.push(
   }),
   new CleanWebpackPlugin(
     {
-      root: path.resolve(__dirname, '../'),
       verbose: true,
       dry: false,
     }
