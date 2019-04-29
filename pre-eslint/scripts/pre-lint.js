@@ -1,6 +1,9 @@
+const path = require('path');
 const exec = require('child_process').exec;
 const CLIEngine = require('eslint').CLIEngine;
-const cli = new CLIEngine({});
+const cli = new CLIEngine({
+  // fix: true,
+});
 function getErrorLevel(number) {
   switch (number) {
   case 2:
@@ -12,10 +15,11 @@ function getErrorLevel(number) {
   return 'undefined';
 }
 let pass = 0;
-exec('git diff --cached --name-only| grep .js$', (error, stdout) => {
-  console.log(11,stdout, 11,error,11);
+
+const pattern = '.(js|vue)$';
+exec(`git diff --cached --name-only| grep -E '${pattern}'`, (error, stdout) => {
   if (stdout.length) {
-    const array = stdout.split('\n');
+    const array = stdout.split('\n').map(item => path.resolve(__dirname, '..', '..', item));
     array.pop();
     const results = cli.executeOnFiles(array).results;
     let errorCount = 0;
