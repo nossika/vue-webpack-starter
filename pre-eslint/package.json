@@ -12,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.2.2"
+    "eslint-plugin-vue": "^5.2.2",
+    "pre-commit": "^1.2.2"
   }
 }
