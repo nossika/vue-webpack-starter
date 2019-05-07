@@ -1,6 +1,6 @@
-# vue-webpack-starter
+# vue-starter
 
-vue官方全家桶 + webpack
+vue官方全家桶
 
 ## 本地开发
 

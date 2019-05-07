@@ -1,4 +1,4 @@
-# vue-ssr
+# vue-ssr-starter
 
 vue ssr & local
 

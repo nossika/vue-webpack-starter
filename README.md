@@ -2,15 +2,22 @@
 
 前端项目基本框架
 
-## vue-webpack
+## vue-starter
 
-vue官方全家桶 + webpack
+vue官方全家桶
 
-## vue-webpack-ts
+## vue-ts-starter
 
-vue官方全家桶 + webpack + typescript
+vue官方全家桶 + typescript
 
-## react-redux-reactrouter-webpack-ts
+## vue-ssr-starter
 
-react + redux + react-router + webpack + typescript
+vue官方全家桶 + ssr
 
+## react-redux-reactrouter-ts-starter
+
+react + redux + react-router + typescript
+
+## react-starter
+
+react

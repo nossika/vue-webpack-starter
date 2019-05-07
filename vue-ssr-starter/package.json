@@ -1,5 +1,5 @@
 {
-  "name": "vue-webpack",
+  "name": "vue-ssr-starter",
   "version": "0.1.0",
   "description": "",
   "scripts": {

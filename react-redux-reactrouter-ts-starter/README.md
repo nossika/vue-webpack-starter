@@ -1,5 +1,6 @@
-# vue-webpack-typescript-starter
-vue项目框架（vue官方全家桶+webpack4+typescript）
+# react-redux-reactrouter-ts-starter
+react项目框架（react+redux+react-router+typescript）
+
 ## 运行
 
     $ npm i
