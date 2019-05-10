@@ -21,3 +21,7 @@ react + redux + react-router + typescript
 ## react-starter
 
 react
+
+## react-mobx-starter
+
+react + mobx
