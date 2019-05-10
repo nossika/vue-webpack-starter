@@ -2,7 +2,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = (options) => ({
     entry: [path.resolve(__dirname, '../src/index.js')],
@@ -14,13 +13,17 @@ module.exports = (options) => ({
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.jsx?$/,
           use: [
             {
               loader: 'babel-loader',
               query: {
-                "presets": ["@babel/preset-env"],
-                "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-proposal-class-properties"]
+                "presets": ["@babel/preset-env", "@babel/preset-react"],
+                "plugins": [
+                  "@babel/plugin-transform-runtime", 
+                  ["@babel/plugin-proposal-decorators", { legacy: true }],
+                  ["@babel/plugin-proposal-class-properties", { loose: true }],
+                ],
               },
             },
           ],
@@ -82,7 +85,6 @@ module.exports = (options) => ({
       },
     },
     plugins: [
-      new VueLoaderPlugin(),
       new MiniCssExtractPlugin({
         filename: "[name].[hash].css",
         chunkFilename: "[chunkhash].css",
@@ -94,7 +96,7 @@ module.exports = (options) => ({
       }),
     ],
     resolve: {
-      extensions: ['*', '.js', '.vue'],
+      extensions: ['*', '.js', '.jsx'],
       alias: {
         'api': path.resolve(__dirname, `../src/api`),
         'pages': path.resolve(__dirname, `../src/pages`),
