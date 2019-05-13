@@ -1,5 +1,5 @@
-# react-starter
-react项目框架（react+redux+react-router）
+# react-reactrouter-starter
+react项目框架（react + react-router）
 
 ## 运行
 

@@ -18,10 +18,10 @@ vue官方全家桶 + ssr
 
 react + redux + react-router + typescript
 
-## react-starter
+## react-reactrouter-starter
 
-react
+react + react-router
 
-## react-mobx-starter
+## react-mobx-reactrouter-starter
 
-react + mobx
+react + mobx + react-router

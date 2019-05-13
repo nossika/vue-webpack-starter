@@ -19,11 +19,7 @@ module.exports = (options) => ({
               loader: 'babel-loader',
               query: {
                 "presets": ["@babel/preset-env", "@babel/preset-react"],
-                "plugins": [
-                  "@babel/plugin-transform-runtime", 
-                  ["@babel/plugin-proposal-decorators", { legacy: true }],
-                  ["@babel/plugin-proposal-class-properties", { loose: true }],
-                ],
+                "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import", "@babel/plugin-proposal-class-properties"]
               },
             },
           ],
