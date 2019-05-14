@@ -25,3 +25,8 @@ react + react-router
 ## react-mobx-reactrouter-starter
 
 react + mobx + react-router
+
+## react-reactrouter-antd-starter
+
+react + react-router + antd
+
