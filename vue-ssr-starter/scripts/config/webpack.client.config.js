@@ -35,7 +35,7 @@ module.exports = merge(baseConfig, {
         },
         styles: {
           name: 'styles',
-          test: /\.css$/,
+          test: /\.(css|less|sass|scss)$/,
           chunks: 'all',
           enforce: true,
         },

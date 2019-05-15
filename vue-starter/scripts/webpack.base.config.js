@@ -67,7 +67,7 @@ module.exports = (options) => ({
           },
           styles: {
             name: 'styles',
-            test: /\.css$/,
+            test: /\.(css|less|sass|scss)$/,   
             chunks: 'all',
             enforce: true
           },
