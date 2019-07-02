@@ -1,5 +1,5 @@
-# react-reactrouter-antd-starter
-react项目框架（react + react-router + antd）
+# react-jest-starter
+react项目框架（react + react-router + jest）
 
 ## 运行
 

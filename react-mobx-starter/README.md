@@ -1,4 +1,4 @@
-# react-mobx-reactrouter-starter
+# react-mobx-starter
 react项目框架（react + mobx + react-router）
 
 ## 运行

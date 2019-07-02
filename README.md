@@ -14,22 +14,22 @@ vue官方全家桶 + typescript
 
 vue官方全家桶 + ssr
 
-## react-redux-reactrouter-ts-starter
+## react-redux-ts-starter
 
 react + redux + react-router + typescript
 
-## react-reactrouter-starter
+## react-starter
 
 react + react-router
 
-## react-mobx-reactrouter-starter
+## react-mobx-starter
 
 react + mobx + react-router
 
-## react-reactrouter-antd-starter
+## react-antd-starter
 
 react + react-router + antd
 
-## react-reactrouter-jest-starter
+## react-jest-starter
 
 react + react-router + jest测试
