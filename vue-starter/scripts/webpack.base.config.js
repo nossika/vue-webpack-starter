@@ -99,7 +99,7 @@ module.exports = (options) => ({
         'api': path.resolve(__dirname, `../src/api`),
         'pages': path.resolve(__dirname, `../src/pages`),
         'components': path.resolve(__dirname, `../src/components`),
-        'utils': path.resolve(__dirname, `../src/util`),
+        'utils': path.resolve(__dirname, `../src/utils`),
         'resources': path.resolve(__dirname, `../src/resource`),
       },
     }
